@@ -32,8 +32,8 @@ class CommentInput extends Component{
 	render(){
 		return(
 			<div className = 'comment-input'>
-			    <UsernameInput onSubmit = {this.handleSubmitOnUsername.bind(this)}/>
-			    <ContentInput onSubmit = {this.handleSubmitOnCommentContent.bind(this)}/>
+			    <UsernameInput onSubmit = {this.handleSubmitOnUsername.bind(this)} />
+			    <ContentInput commentContent = {this.state.commentContent} onSubmit = {this.handleSubmitOnCommentContent.bind(this)}/>
 			    <button onClick = {this.handleSubmit.bind(this)}>发布</button>
 			</div>
 		)
