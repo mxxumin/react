@@ -44,11 +44,14 @@ class Comment extends Component{
 	render(){
 		const comment = this.props.comment;
 		return(
-			<div>
-			    <h6>{comment.username}:</h6>
+			<div className = 'comment'>
+			    <div className = 'comment-username'>{comment.username}:</div>
 			    <p dangerouslySetInnerHTML = {{__html:this._getProcessedContent(comment.commentContent)}} />
-			    <span>{this.state.createdTime}</span>
-			    <span onClick = {this.handleDeleteComment.bind(this)}>删除</span>
+			    <div className = 'comment-detail'>
+				    <span>{this.state.createdTime}</span>
+				    <span className = 'comment-detail-separate'>|</span>
+				    <span className = 'comment-delete' onClick = {this.handleDeleteComment.bind(this)}>删除</span>
+			    </div>
 			</div>
 		)
 	}

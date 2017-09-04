@@ -1,5 +1,83 @@
-body {
-  margin: 0;
+* {
   padding: 0;
-  font-family: sans-serif;
-}
+  margin: 0;
+  box-sizing: border-box; }
+
+.wrapper {
+  width: 600px;
+  padding: 20px;
+  border: 1px solid rgba(239, 72, 54, 0.5);
+  margin: 50px auto; }
+  .wrapper .comment-input {
+    padding: 20px 10px;
+    border: 1px solid rgba(239, 72, 54, 0.5);
+    margin-bottom: 20px; }
+    .wrapper .comment-input .username-input {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-bottom: 20px; }
+      .wrapper .comment-input .username-input span {
+        display: block;
+        width: 90px;
+        padding: 5px;
+        text-align: center; }
+      .wrapper .comment-input .username-input input {
+        width: 400px;
+        height: 31px;
+        padding: 2px 10px;
+        border: 1px solid rgba(239, 72, 54, 0.5);
+        border-radius: 3px; }
+    .wrapper .comment-input .content-input {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-bottom: 20px; }
+      .wrapper .comment-input .content-input span {
+        display: block;
+        width: 90px;
+        padding: 5px; }
+      .wrapper .comment-input .content-input textarea {
+        width: 400px;
+        height: 100px;
+        padding: 10px;
+        border: 1px solid rgba(239, 72, 54, 0.5);
+        border-radius: 3px; }
+    .wrapper .comment-input button {
+      float: right;
+      width: 80px;
+      height: 30px;
+      border: 1px solid rgba(239, 72, 54, 0.5);
+      border-radius: 3px;
+      margin-right: 45px;
+      letter-spacing: 10px;
+      text-indent: 10px;
+      color: white;
+      background: #ef4836; }
+    .wrapper .comment-input:after {
+      content: '';
+      display: block;
+      clear: both; }
+  .wrapper .comment-list .comment {
+    padding: 10px;
+    border: 1px solid rgba(239, 72, 54, 0.5);
+    margin-bottom: 15px; }
+    .wrapper .comment-list .comment .comment-username {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ef4836; }
+    .wrapper .comment-list .comment p {
+      margin: 5px 15px; }
+    .wrapper .comment-list .comment .comment-detail {
+      display: flex;
+      justify-content: flex-end; }
+      .wrapper .comment-list .comment .comment-detail .comment-detail-separate {
+        font-weight: bold;
+        color: #ef4836;
+        margin: 0 5px; }
+      .wrapper .comment-list .comment .comment-detail .comment-delete {
+        color: #bebebe; }
+        .wrapper .comment-list .comment .comment-detail .comment-delete:hover {
+          color: #ef4836; }
+
+/*# sourceMappingURL=index.css.map */
