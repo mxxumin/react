@@ -43,6 +43,22 @@
         padding: 10px;
         border: 1px solid rgba(239, 72, 54, 0.5);
         border-radius: 3px; }
+        .wrapper .comment-input .content-input textarea::-webkit-input-placeholder {
+          font-size: 24px;
+          font-family: '"Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif';
+          color: rgba(239, 72, 54, 0.5); }
+        .wrapper .comment-input .content-input textarea::-moz-placeholder {
+          font-size: 24px;
+          font-family: '"Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif';
+          color: rgba(239, 72, 54, 0.5); }
+        .wrapper .comment-input .content-input textarea:-moz-placeholder {
+          font-size: 24px;
+          font-family: '"Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif';
+          color: rgba(239, 72, 54, 0.5); }
+        .wrapper .comment-input .content-input textarea:-ms-input-placeholder {
+          font-size: 24px;
+          font-family: '"Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif';
+          color: rgba(239, 72, 54, 0.5); }
     .wrapper .comment-input button {
       float: right;
       width: 80px;
@@ -67,6 +83,7 @@
       font-weight: bold;
       color: #ef4836; }
     .wrapper .comment-list .comment p {
+      word-wrap: break-word;
       margin: 5px 15px; }
     .wrapper .comment-list .comment .comment-detail {
       display: flex;

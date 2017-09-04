@@ -25,6 +25,7 @@ class ContentInput extends Component{
 			<div className = 'content-input'>
 		        <span>评论内容：</span>
 		        <textarea 
+		        placeholder = '写出你想说的, 让更多的人看到 ~_~'
 		        ref = {(textarea) => {this.textarea = textarea}}
 		        // 在组件中传入commentContent属性，判断属性值是否为空来显示评论内容，当点击“发布”按钮后，CommentInput组件中的handleSubmit事件会将commentContent属性值变为空。
 		        value = {this.props.commentContent? this.state.commentContent:''} 

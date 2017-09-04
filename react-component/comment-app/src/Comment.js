@@ -22,9 +22,11 @@ class Comment extends Component{
 	}
 	_updateCreatedTime(){
 		const commentCreatedTime = this.props.comment.commentCreatedTime,
-		      duration = ((+new Date())-commentCreatedTime)/1000;
+		      duration = ((+new Date())-commentCreatedTime)/1000,
+		      durationConversion = Math.round(duration/60),
+		      t = new Date(commentCreatedTime);
 		this.setState({
-			createdTime:duration>60? `${Math.round(duration/60)}分钟前`:`${Math.round(Math.max(duration,1))}秒前`
+			createdTime:duration>60? (durationConversion>60? `${t.toLocaleString()}`:`${durationConversion}分钟前`):`${Math.round(Math.max(duration, 1))}秒前`
 		})
 	}
 	_getProcessedContent(content){

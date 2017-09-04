@@ -3,8 +3,31 @@
 	margin:0;
 	box-sizing:border-box;
 }
+
 $border:1px solid rgba(239, 72, 54, .5);
 $border-radius:3px;
+@mixin placeholder-setting ($fontSize, $fontFamily, $color) {
+	&::-webkit-input-placeholder{
+		font-size:$fontSize; 
+		font-family:$fontFamily; 
+		color:$color;
+	}
+	&::-moz-placeholder{
+		font-size:$fontSize; 
+		font-family:$fontFamily; 
+		color:$color;
+	}
+	&:-moz-placeholder{
+		font-size:$fontSize; 
+		font-family:$fontFamily; 
+		color:$color;
+	}
+	&:-ms-input-placeholder{
+		font-size:$fontSize; 
+		font-family:$fontFamily; 
+		color:$color;
+	}
+}
 
 .wrapper{
 	width:600px;
@@ -60,6 +83,8 @@ $border-radius:3px;
 				padding:10px;
 				border:$border;
 				border-radius:$border-radius;
+
+				@include placeholder-setting(24px, '"Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif', rgba(239, 72, 54, .5))
 			}
 		}
 
@@ -103,6 +128,7 @@ $border-radius:3px;
 
 		    // Comment中评论内容样式
 		    p{
+		    	word-wrap:break-word;
 		    	margin:5px 15px;
 		    }
 
