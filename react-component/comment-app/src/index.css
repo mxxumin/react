@@ -70,6 +70,8 @@
       text-indent: 10px;
       color: white;
       background: #ef4836; }
+      .wrapper .comment-input button:hover {
+        background: rgba(239, 72, 54, 0.8); }
     .wrapper .comment-input:after {
       content: '';
       display: block;
@@ -87,7 +89,8 @@
       margin: 10px 15px; }
     .wrapper .comment-list .comment .comment-operation {
       display: flex;
-      justify-content: flex-start; }
+      justify-content: flex-start;
+      margin-bottom: 10px; }
       .wrapper .comment-list .comment .comment-operation .comment-reply {
         display: flex;
         justify-content: flex-start;

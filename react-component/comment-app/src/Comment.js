@@ -20,7 +20,8 @@ class Comment extends Component{
 	  }
 	componentWillMount(){
 		this._updateCreatedTime();
-		this._timer = setInterval(this._updateCreatedTime.bind(this),5000)
+		this._timer = setInterval(this._updateCreatedTime.bind(this),5000);
+		//this._loadCommentReplys();加载localStorage中的回复数据会导致死循环，暂时还没有好的方法让回复数据在刷新页面后不会消失
 	}
 	componentWillUnmount(){
 		clearInterval(this._timer)
@@ -43,6 +44,16 @@ class Comment extends Component{
 	        .replace(/'/g, "&#039;")
 	        .replace(/`([\S\s]+?)`/g, '<code>$1</code>')
 	}
+	_loadCommentReplys(){
+		let commentReplys = localStorage.getItem('commentReplys');
+		if(commentReplys){
+			commentReplys = JSON.parse(commentReplys);
+			this.setState({commentReplys});
+		}
+	}
+	_saveCommentReplys(commentReplys){
+		localStorage.setItem('commentReplys',JSON.stringify(commentReplys))
+	}
 	handleDeleteComment(){
 		if(this.props.onDeleteComment){
 			this.props.onDeleteComment(this.props.index)
@@ -58,13 +69,21 @@ class Comment extends Component{
 		if(!commentReply.commentContent) return alert('请输入评论内容')
 		const commentReplys = this.state.commentReplys;
 		commentReplys.push(commentReply); 
-		this.setState({commentReplys})
-	    console.log(commentReplys)
+		this.setState({commentReplys});
+	    console.log(commentReplys);
+	    this._saveCommentReplys(commentReplys);
 	}
 	handleIsReply(isReply){
 		console.log(isReply)
 		this.setState({isReply:!this.state.isReply})
 		console.log(this.state.isReply)
+	}
+	handleCommentReplys(index){
+		console.log(index)
+		const commentReplys = this.state.commentReplys;
+		commentReplys.splice(index,1)
+		this.setState({commentReplys})
+		this._saveCommentReplys(commentReplys)
 	}
 	render(){
 		const comment = this.props.comment;
@@ -84,7 +103,7 @@ class Comment extends Component{
 			    </div>
 			    <div>
 			        {this.state.isReply? <CommentReplyInput isReply = {this.handleIsReply.bind(this)} onSubmit = {this.handleCommentReply.bind(this)} />:null}
-			        <CommentList comments = {this.state.commentReplys} />
+			        <CommentList comments = {this.state.commentReplys} onDeleteCommentReplys = {this.handleCommentReplys.bind(this)}/>
 			    </div>
 			</div>
 		)

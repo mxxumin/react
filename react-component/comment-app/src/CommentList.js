@@ -14,6 +14,9 @@ class CommentList extends Component{
 		if(this.props.onDeleteComment){
 			this.props.onDeleteComment(index)
 		}
+		if(this.props.onDeleteCommentReplys){
+			this.props.onDeleteCommentReplys(index)
+		}
 	}
 	render(){
 		return(
