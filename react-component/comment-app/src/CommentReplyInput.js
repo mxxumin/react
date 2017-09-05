@@ -33,15 +33,20 @@ class CommentInput extends Component{
 			commentContent:'',
 			isReply:!this.state.isReply
 		})
+		if(this.props.isReply){
+			this.props.isReply({
+				isReply:this.state.isReply
+			})
+		}
 	}
 	render(){
 		return(
 			<div>
-			<div className = 'comment-input'>
+			{this.state.isReply? <div className = 'comment-input'>
 			    <UsernameInput onSubmit = {this.handleSubmitOnUsername.bind(this)} />
 			    <ContentInput commentContent = {this.state.commentContent} onSubmit = {this.handleSubmitOnCommentContent.bind(this)}/>
 			    <button onClick = {this.handleSubmit.bind(this)}>发布</button>
-			</div>
+			</div>:null}
 			</div>
 		)
 	}

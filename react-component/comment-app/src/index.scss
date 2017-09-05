@@ -129,26 +129,47 @@ $border-radius:3px;
 		    // Comment中评论内容样式
 		    p{
 		    	word-wrap:break-word;
-		    	margin:5px 15px;
+		    	margin:10px 15px;
 		    }
 
 		    // Comment中操作内容样式
-		    .comment-detail{
+		    .comment-operation{
 		    	display:flex;
-		    	justify-content:flex-end;
+		    	justify-content:flex-start;
 
-		    	.comment-detail-separate{
-		    		font-weight:bold;
-		    		color:rgb(239, 72, 54);
-		    		margin:0 5px;
+		    	.comment-reply{
+		    		display:flex;
+		    		justify-content:flex-start;
+		    		width:30%;
+		    		margin-left:15px;
+		    		
+		    		span{
+		    			color:rgb(239, 72, 54);
+
+			    		&:hover{
+			    			color:rgba(239, 72, 54, .5);
+			    		}
+		    		}
 		    	}
 
-		    	.comment-delete{
-		    		color:rgb(190, 190, 190);
+		    	.comment-detail{
+		    		display:flex;
+		    		justify-content:flex-end;
+		    		width:70%;
 
-		    		&:hover{
-		    			color:rgb(239, 72, 54);
-		    		}
+			    	.comment-detail-separate{
+			    		font-weight:bold;
+			    		color:rgb(239, 72, 54);
+			    		margin:0 5px;
+			    	}
+
+			    	.comment-delete{
+			    		color:rgb(190, 190, 190);
+
+			    		&:hover{
+			    			color:rgb(239, 72, 54);
+			    		}
+			    	}
 		    	}
 		    }
 		}

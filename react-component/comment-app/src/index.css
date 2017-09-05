@@ -84,17 +84,30 @@
       color: #ef4836; }
     .wrapper .comment-list .comment p {
       word-wrap: break-word;
-      margin: 5px 15px; }
-    .wrapper .comment-list .comment .comment-detail {
+      margin: 10px 15px; }
+    .wrapper .comment-list .comment .comment-operation {
       display: flex;
-      justify-content: flex-end; }
-      .wrapper .comment-list .comment .comment-detail .comment-detail-separate {
-        font-weight: bold;
-        color: #ef4836;
-        margin: 0 5px; }
-      .wrapper .comment-list .comment .comment-detail .comment-delete {
-        color: #bebebe; }
-        .wrapper .comment-list .comment .comment-detail .comment-delete:hover {
+      justify-content: flex-start; }
+      .wrapper .comment-list .comment .comment-operation .comment-reply {
+        display: flex;
+        justify-content: flex-start;
+        width: 30%;
+        margin-left: 15px; }
+        .wrapper .comment-list .comment .comment-operation .comment-reply span {
           color: #ef4836; }
+          .wrapper .comment-list .comment .comment-operation .comment-reply span:hover {
+            color: rgba(239, 72, 54, 0.5); }
+      .wrapper .comment-list .comment .comment-operation .comment-detail {
+        display: flex;
+        justify-content: flex-end;
+        width: 70%; }
+        .wrapper .comment-list .comment .comment-operation .comment-detail .comment-detail-separate {
+          font-weight: bold;
+          color: #ef4836;
+          margin: 0 5px; }
+        .wrapper .comment-list .comment .comment-operation .comment-detail .comment-delete {
+          color: #bebebe; }
+          .wrapper .comment-list .comment .comment-operation .comment-detail .comment-delete:hover {
+            color: #ef4836; }
 
 /*# sourceMappingURL=index.css.map */
